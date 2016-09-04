@@ -1,16 +1,8 @@
-<html>
-<head>
-    <title>My first PHP Website</title>
-</head>
-<body>
 <?php
-echo "<p>Hello World!</p>";
+session_start();
+if ($_SESSION['user']) { // forward to home if user is logged in
+    header("location: upload.php");
+} else {
+    header("location: login.php");
+}
 ?>
-<div><a href="login.php"> Click here to login</a>
-</div>
-<div>
-    <a href="register.php"> Click here to register</a>
-</div>
-
-</body>
-</html>
