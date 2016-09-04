@@ -6,7 +6,7 @@ $bool = true;
 
 mysql_connect("localhost", "root", "root") or die (mysql_error());
 mysql_select_db("cloud") or die ("Cannot connect to database");
-$query = mysql_query("Select * from users WHERE username='$username'");
+$query = mysql_query("SELECT * FROM user WHERE username='$username'");
 $exists = mysql_num_rows($query);
 $table_users = "";
 $table_password = "";
