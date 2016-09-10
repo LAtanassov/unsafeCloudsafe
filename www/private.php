@@ -10,7 +10,7 @@ if (!$_SESSION['username']) {
 <?php include 'templates/navigation.php'; ?>
 
     <div class="container">
-        <h3>public data</h3>
+        <h3>private data</h3>
         <div class="table-responsive">
             <table class="table">
                 <tr>
@@ -24,8 +24,8 @@ if (!$_SESSION['username']) {
                 <?php
                 mysql_connect("localhost", "root", "root") or die (mysql_error());
                 mysql_select_db("cloud") or die ("Cannot connect to database");
-
-                $result = mysql_query("SELECT * FROM data JOIN user ON data.fuid = user.uid WHERE ispublic =1");
+                $uid = $_SESSION['uid'];
+                $result = mysql_query("SELECT * FROM data JOIN user ON data.fuid = user.uid WHERE ispublic = 0 AND data.fuid = '$uid'");
 
                 while ($row = mysql_fetch_array($result, MYSQL_ASSOC)) {
                     echo '<tr>' .

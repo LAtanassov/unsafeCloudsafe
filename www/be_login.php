@@ -22,7 +22,7 @@ if ($username == '' or $password == '') {
 
         session_start();
         $_SESSION['username'] = $row['username'];
-        $_SESSION['uid'] = $row['id'];
+        $_SESSION['uid'] = $row['uid'];
         echo '<pre>success </pre>';
         header("location: index.php");
     } else {
