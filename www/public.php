@@ -2,7 +2,7 @@
 
 <?php
 session_start();
-if (!$_SESSION['user']) { // forward to home if user is logged in
+if (!$_SESSION['username']) { // forward to home if user is logged in
     header("location: index.php");
 }
 ?>

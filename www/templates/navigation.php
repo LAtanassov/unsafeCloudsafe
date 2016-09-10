@@ -4,7 +4,7 @@
             <a class="navbar-brand" href="/index.php">unsafeCloudSafe</a>
         </div>
         <?php
-        if ($_SESSION['user']) { // forward to home if user is logged in
+        if ($_SESSION['username']) { // forward to home if user is logged in
             echo '<div>
                     <ul class="nav navbar-nav">
                         <li><a href="public.php">public data</a></li>
