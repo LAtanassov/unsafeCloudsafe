@@ -8,6 +8,7 @@ if (!$_SESSION['username']) {
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && $_FILES['file']['size'] > 0) {
     $uid = $_SESSION['uid'];
+    $keyword = $_POST['keyword'];
     $fileName = $_FILES['file']['name'];
     $tmpName = $_FILES['file']['tmp_name'];
     $fileSize = $_FILES['file']['size'];
@@ -26,8 +27,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $_FILES['file']['size'] > 0) {
     mysql_connect("localhost", "root", "root") or die (mysql_error());
     mysql_select_db("cloud") or die ("Cannot connect to database");
 
-    $query = "INSERT INTO data (fuid, name, ispublic, type, size, content ) " .
-        "VALUES ('$uid', '$fileName', '$isPublic','$fileType', '$fileSize', '$content')";
+    $query = "INSERT INTO data (fuid, name, ispublic, keyword, type, size, content ) " .
+        "VALUES ('$uid', '$fileName', '$isPublic', '$keyword', '$fileType', '$fileSize', '$content')";
 
     $result = mysql_query($query);
 

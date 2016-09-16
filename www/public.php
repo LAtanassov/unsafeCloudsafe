@@ -17,6 +17,7 @@ if (!$_SESSION['username']) {
                     <th>#</th>
                     <th>user</th>
                     <th>file name</th>
+                    <th>keyword</th>
                     <th>type</th>
                     <th>size</th>
                     <th>download</th>
@@ -32,6 +33,7 @@ if (!$_SESSION['username']) {
                             '<td>' . $row["did"] . '</td>' .
                             '<td>' . $row["username"] . '</td>' .
                             '<td>' . $row["name"] . '</td>' .
+                            '<td>' . $row["keyword"] . '</td>' .
                             '<td>' . $row["type"] . '</td>' .
                             '<td>' . $row["size"] . ' B</td>' .
                             '<td><a class="btn btn-default" href="download.php?file_id=' . $row["did"] . '"><span class="glyphicon glyphicon-save" aria-hidden="true"></a></td>' .
