@@ -1,3 +1,7 @@
+CREATE DATABASE cloud;
+
+USE cloud;
+
 CREATE TABLE user
 (
 uid int NOT NULL AUTO_INCREMENT,
