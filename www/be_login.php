@@ -23,14 +23,9 @@ if ($username == '' or $password == '') {
         session_start();
         $_SESSION['username'] = $row['username'];
         $_SESSION['uid'] = $row['uid'];
-        echo '<pre>success </pre>';
         header("location: index.php");
     } else {
-        echo '<pre>sql error </pre>';
         header("location: login.php?msg=login_failed");
     }
-
 }
-
-
 ?>
